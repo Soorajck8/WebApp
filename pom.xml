@@ -20,7 +20,6 @@
             </plugin>
         </plugins>
     </build>
-    <!--
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -28,7 +27,6 @@
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
-    -->
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
