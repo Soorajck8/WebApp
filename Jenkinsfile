@@ -1,24 +1,15 @@
 pipeline {
     agent any
-
+	
     tools {
-        // samplel commit for git
-        // Install the Maven version configured as "M3" and add it to the path .
+        // Install the Maven version configured as "M3" and add it to the path.
         maven "M3"
     }
-
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                // git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                git 'https://github.com/Soorajck8/WebApp.git'
-
-                // Run Maven on a Unix agent.
+                git credentialsId: 'pat_jenkins', poll: false, url: 'https://github.com/Soorajck8/WebApp.git'
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
 
             post {
@@ -28,6 +19,23 @@ pipeline {
                     junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
                 }
+            }
+        }
+   
+        stage('test') {
+            steps {
+                echo 'test app'
+            }
+        }
+    
+        stage('sonarqube') {
+            steps {
+                echo 'sonarqube World'
+            }
+        }
+            stage('deploy') {
+            steps {
+                echo 'deploy app'
             }
         }
     }
