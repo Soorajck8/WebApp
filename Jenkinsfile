@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        // samplel commit 
+        // samplel commit for git
         // Install the Maven version configured as "M3" and add it to the path .
         maven "M3"
     }
