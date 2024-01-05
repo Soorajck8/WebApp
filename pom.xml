@@ -26,7 +26,7 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.0.2</version>
                 <configuration>
-                    <sonar.host.url>http://107.23.107.165:9000//</sonar.host.url>
+                    <sonar.host.url>http://107.23.107.165:9000/</sonar.host.url>
                     <!-- Other SonarQube configurations -->
                 </configuration>
             </plugin>
